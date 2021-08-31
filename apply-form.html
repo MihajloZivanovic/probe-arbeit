@@ -1,0 +1,263 @@
+<!--
+    Auftrag - P/Card International AG
+    Probearbeit
+
+    30.08.2021 Mihajlo Zivanovic
+-->
+<!DOCTYPE html>
+<html lang="de-CH">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bewerbungsformular Polymechaniker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <a href=#home>
+            <img class="logo" src="sts.png" alt="STS Schänis Logo">
+        </a>
+        <!--Kleines Navigationsmenü mit den wichtigsten Verlinkungen-->
+        <nav>
+            <!--Button für das Navigationsmenü auf mobilen Geräten-->
+            <button class=mobile-menu aria-expanded="false" aria-controls="menu">Menü</button>
+            <ul class="navbar" id="navbar">
+                <li><a href=#home><i class="fa fa-lg fa-home"></i></a></li>
+                <li><a href=#Stanztechnik>Stanztechnik</a></li>
+                <li><a href=#Schliesstechnik>Schliesstechnik</a></li>
+                <li><a href=#Befestigungstechnik>Befestigungstechnik</a></li>
+                <li><a href=#Unternehmen>Unternehmen</a></li>
+                <li><a href=#Produkte>Produkte</a></li>
+                <li><a href=#Downloads>Downloads</a></li>
+                <li><a href=#Kontakt>Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="content">
+            <h1>Bewerbungsformular Polymechaniker</h1>
+
+            <!--Anfang des Formulars-->
+            <form action="apply-form.html" method="POST" id="form">
+
+                <section class="wrapper-main">
+
+                    <div class="wrapper-child" id="child-1">
+
+                        <!--Select type für die Anrede-->
+                        <label for="salutation">Anrede:*</label><br>
+                        <select class="required" id="salutation" name="salutation" required>
+                            <option value="">Wählen Sie bitte aus</option>
+                            <option value="salutation-value1">Frau</option>
+                            <option value="salutation-value2">Herr</option>
+                            <option value="salutation-value3">Genderneutral</option>
+                        </select><br>
+
+                        <!--Text type für den Vornamen-->
+                        <label for="title">Titel:</label><br>
+                        <input class="not-required" type="text" id="titel" name="titel"><br>
+
+                        <!--Text type für den Vornamen-->
+                        <label for="first-name">Vorname:*</label><br>
+                        <input class="required" type="text" id="first-name" name="first-name" required><br>
+
+                        <!--Text type für den Nachnamen-->
+                        <label for="last-name">Nachname:*</label><br>
+                        <input class="required" type="text" id="last-name" name="last-name" required><br>
+
+                        <!--Date type für den Geburtsdatum, funktioniert nicht in Internet Explorer-->
+                        <label for="date-of-birth">Geburtsdatum:*</label><br>
+                        <input class="required" type="date" id="date-of-birth" name="date-of-birth" required><br>
+
+                        <!--Email type für das Email-->
+                        <label for="email">E-Mail:*</label><br>
+                        <input class="required" type="email" id="email" name="email" required><br>
+
+                        <!--Email type für die Wiederholung der Emails-->
+                        <label for="reenteremail">E-Mail wiederholen:*</label><br>
+                        <input class="required" type="email" id="reenteremail" name="reenteremail" required><br>
+
+                        <!--Password type für das Passwort-->
+                        <label for="pwd">Passwort (8 bis 32 Zeichen, mindestens 1 Grossbuchstabe, Kleinbuchstabe, Nummer
+                            und Zeichen):*</label><br>
+                        <input class="required" type="password" id="pwd" name="pwd"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$"
+                            required><br>
+
+                        <!--Password type für die Wiederholung des Passworts-->
+                        <label for="reenterpwd">Password wiederholen:*</label><br>
+                        <input class="required" type="password" id="reenterpwd" name="reenterpwd"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$"
+                            required><br>
+                    </div>
+
+                    <div class="wrapper-child" id="child-2">
+
+                        <!--Radio type für die Sprachauswahl-->
+                        <p>Sprache auswählen*</p>
+                        <div id="language">
+                            <p>
+                                <input type="radio" id="en" name="language-select" value="English" required>
+                                <label for="en">Englisch</label>
+                            </p>
+                            <p>
+                                <input type="radio" id="de" name="language-select" value="German">
+                                <label for="de">Deutsch</label>
+                            </p>
+                            <p>
+                                <input type="radio" id="fr" name="language-select" value="French">
+                                <label for="fr">Französisch</label>
+                            </p>
+                            <p>
+                                <input type="radio" id="it" name="language-select" value="Italian">
+                                <label for="it">Italienisch</label>
+                            </p>
+                        </div>
+
+                        <!--Radio type zum Auswählen ob man das Formular nacher als PDF herunterladen möchte-->
+                        <p>PDF-Datei herunterladen*</p>
+                        <div id="pdf">
+                            <p>
+                                <input type="radio" id="pdf-yes" name="pdf" value="pdf-yes" required>
+                                <label for="pdf-yes">Ja</label>
+                            </p>
+                            <p>
+                                <input type="radio" id="pdf-no" name="pdf" value="pdf-no">
+                                <label for="pdf-no">Nein</label>
+                            </p>
+                        </div>
+
+                        <!--Text type für den Strassenname-->
+                        <label for="addre-street">Strasse</label><br>
+                        <input class="not-required" type="text" id="addre-street" name="addre-street"><br>
+
+                        <!--Text type für die Strassennummer-->
+                        <label for="addrNr">Nr.</label><br>
+                        <input class="not-required" type="number" id="addrNr" name="addrNr"><br>
+
+                        <!--Text type für die Postleitzahl-->
+                        <label for="addr-postal">PLZ</label><br>
+                        <input class="not-required" type="number" id="addr-postal" name="addr-postal"><br>
+
+                        <!--Text type für die Ortschaft-->
+                        <label for="addr-locality">Ortschaft</label><br>
+                        <input class="not-required" type="text" id="addr-locality" name="addr-locality"><br>
+
+                        <!--Button zum absenden-->
+                        <br><button type="submit" id="submit">Absenden</button>
+                    </div>
+
+                </section>
+
+            </form>
+
+        </div>
+    </article>
+
+    <footer>
+        <section class="wrapper-footer">
+            <!--Kontaktfeld der Firmas-->
+            <div class="wrapper-footer-child">
+                <h3>Kontakt</h3>
+                <p>STS Systemtechnik Schänis GmbH</p>
+                <p>Feld 9</p>
+                <p>8718 Schänis</p>
+                <p><i class="fa fa-fw fa-phone"></i> +41 55 619 68 00</p>
+                <p><i class="fa fa-fw fa-map-marker"></i>Anfahrt</p>
+            </div>
+            <!--Öffnungszeiten der Firma-->
+            <div class="wrapper-footer-child">
+                <h3>Öffnungszeiten</h3>
+                <table>
+                    <tr>
+                        <td>Montag-Donnerstag</td>
+                        <td>
+                            <p>
+                                08:00-12:00 Uhr
+                            </p>
+                            <p>
+                                13:30-17:00 Uhr
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Freitag</td>
+                        <td>
+                            <p>
+                                08:00-12:00 Uhr
+                            </p>
+                            <p>
+                                13:30-16:00 Uhr
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--Social Media der Firma-->
+            <div class="wrapper-footer-child">
+                <h3>Folgen Sie uns</h3>
+                <ul class="icons-footer">
+                    <li><a href=#linkedin><i class="fa fa-3x fa-linkedin"></i></a></li>
+                    <li><a href=#youtube><i class="fa fa-3x fa-youtube"></i></a></li>
+                    <li><a href=#facebook><i class="fa fa-3x fa-facebook"></i></a></li>
+                    <li><a href=#instagram><i class="fa fa-3x fa-instagram"></i></a></li>
+                </ul>
+            </div>
+
+        </section>
+    </footer>
+
+    <script>
+        /*
+        Variablen Definierung; Formular selbst und Submit Button
+        Zum Button werden 2 Event zugefügt und beim drucken des Buttons ausgeführt
+        */
+        var form = document.getElementById('form');
+        var button = document.getElementById("submit")
+        button.addEventListener("click", () => {
+            emailMatch();
+            passwordMatch();
+        })
+        /*Funktion überprüft ob die beiden eingegebene E-Mails übereinstimmen, falls nich man erhält eine Warnung*/
+        function emailMatch() {
+            if (form.email.value != form.reenteremail.value) {
+                alert("Die E-Mail Addressen stimmen nicht überein!");
+                return false;
+            }
+            return true;
+        }
+        /*Funktion überprüft ob die beiden eingegebene Passwörter übereinstimmen, falls nich man erhält eine Warnung*/
+        function passwordMatch() {
+            if (form.pwd.value != form.reenterpwd.value) {
+                alert("Die Passwörter stimmen nicht überein!");
+                return false;
+            }
+            return true;
+        }
+        /*
+        Die Liste der Navigationobjekten wird beim Auführen des Home Buttons im kleinem Modus ausgeführt
+
+        */
+        var toggle = document.querySelector('.mobile-menu');
+        var menu = document.querySelector('.navbar');
+        /*
+        Falls das Menü schon erweitert ist, wird dieser geschlossen und das Attribut aria-expanden wird auf false zurückgesetzt
+        Sonst im Normalfall und Erstbetätigung wird das Menü erwitert und das Attribut auf true gesetzt
+        is-active zählt als Anzeige welche von diesen 2 Aktionen ausgeführt werden soll
+        */
+        toggle.addEventListener('click', function () {
+            if (menu.classList.contains('is-active')) {
+                this.setAttribute('aria-expanded', 'false');
+                menu.classList.remove('is-active');
+            } else {
+                menu.classList.add('is-active');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    </script>
+</body>
+
+</html>
